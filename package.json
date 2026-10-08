@@ -1,0 +1,9 @@
+{
+  "name": "dcta-banking-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline conversational transfer demo with a deterministic authorization gateway",
+  "type": "module",
+  "scripts": { "start": "node server.mjs", "test": "node --test test/*.test.mjs" },
+  "engines": { "node": ">=22" }
+}

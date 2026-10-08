@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#9b263d"><title>DCTA · 对话交易实验室</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%239b263d'/%3E%3Ctext x='13' y='49' font-size='48' fill='white' font-family='Georgia'%3ED%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="DCTA 首页"><span class="brand-mark">D</span><span>DCTA<small>CONVERSATIONAL BANKING</small></span></a>
+    <div class="nav-label">WORKSPACE</div>
+    <nav aria-label="主导航"><button class="nav active" data-tab="transfer"><span>↗</span> 对话转账</button><button class="nav" data-tab="lab"><span>◇</span> 安全实验室</button><button class="nav" data-tab="audit"><span>≡</span> 审计记录 <b id="audit-count">0</b></button></nav>
+    <div class="sidebar-note"><div class="shield">✓</div><strong>Draft first. Authorize always.</strong><p>AI 准备交易。<br>用户决定是否执行。</p></div>
+    <div class="identity"><span class="avatar">AL</span><div>Alex Lee<small>演示账户 · SGD</small></div><span class="online-dot"></span></div>
+  </aside>
+  <main>
+    <header class="topbar"><div><span class="breadcrumb">DBS CHALLENGE / PROTOTYPE</span><h1 id="page-title">把转账，说出来。</h1></div><div class="top-actions"><span class="mode"><i></i> 离线演示</span><button id="reset" class="button subtle">重置演示</button></div></header>
+    <div class="demo-notice">独立竞赛原型 · 模拟资金与身份认证 · 本版使用规则解析，未接入真实银行或大模型 <button id="reconnect" class="button subtle" hidden>重新连接</button></div>
+    <section class="accounts" aria-label="账户余额"><article class="account primary"><div>储蓄账户 <span>•••• 2038</span></div><strong id="savings">—</strong><small>AVAILABLE BALANCE · SGD</small><div class="account-art">↗</div></article><article class="account"><div>往来账户 <span>•••• 7716</span></div><strong id="current">—</strong><small>AVAILABLE BALANCE · SGD</small></article><article class="account metric"><div>安全执行</div><strong><span id="transaction-count">0</span><em>笔交易</em></strong><small>每笔执行均需有效授权</small></article></section>
+    <section id="transfer-view" class="view active-view">
+      <div class="transfer-grid">
+        <article class="panel conversation"><div class="panel-header"><div><span class="eyebrow">YOUR BANKING ASSISTANT</span><h2>对话工作台</h2></div><span class="pill">只读草稿权限</span></div>
+          <div id="messages" class="messages" aria-live="polite"></div>
+          <div class="examples"><span>试着说</span><button data-example="从储蓄账户给妈妈转 200 新元">给妈妈转账 ↗</button><button data-example="从储蓄账户给 John 转 500 新元">同名收款人 ↗</button><button data-example="从储蓄账户给妈妈转 200 新元，再给 Alice 转 150 新元">两笔转账 ↗</button></div>
+          <form id="chat-form" class="composer"><label class="sr-only" for="prompt">转账指令</label><textarea id="prompt" maxlength="1200" rows="2" placeholder="例如：从储蓄账户给妈妈转 200 新元…"></textarea><div class="composer-footer"><button type="button" id="voice" class="voice-button" title="浏览器语音识别，可能需要联网">◉ <span>语音输入</span></button><span>Enter 发送 · Shift+Enter 换行</span><button class="button main-button" type="submit" id="send">生成草稿 <span>↗</span></button></div></form>
+          <div id="voice-note" class="input-note">文字流程无需联网。语音识别取决于浏览器，可能需要联网。</div>
+        </article>
+        <div class="review-column"><article class="panel draft-panel"><div class="panel-header"><div><span class="eyebrow">TRANSACTION REVIEW</span><h2>交易草稿</h2></div><span id="draft-status" class="pill muted">待生成</span></div><div id="draft-content"></div></article>
+          <article class="trust-card"><div class="trust-title"><span>◇</span><h3>授权是执行的前提</h3></div><p>解释与执行分离。网关校验交易签名、有效期、内容一致性与重复提交。</p><div class="trust-flow"><span>解析</span><b>→</b><span>校验</span><b>→</b><span>授权</span><b>→</b><span>执行</span></div></article>
+        </div>
+      </div>
+      <article class="panel recent"><div class="panel-header"><h2>最近交易</h2><span class="eyebrow">SIMULATED LEDGER</span></div><div id="transactions"></div></article>
+    </section>
+    <section id="lab-view" class="view"><div class="section-intro"><span class="eyebrow">TRUST, VERIFIED</span><h2>安全性，要看拦截结果。</h2><p>每项测试调用实际验证逻辑，在独立测试账户执行，不影响你的演示余额。</p></div><div id="lab-cards" class="lab-grid"></div><article id="lab-result" class="panel result-panel" aria-live="polite"><h3>选择一个场景，检查系统如何拒绝错误交易。</h3><p>测试结果将显示拦截原因、实际扣款和事件记录。</p></article></section>
+    <section id="audit-view" class="view"><div class="section-intro"><span class="eyebrow">EVERY STEP, ACCOUNTED FOR</span><h2>从指令到执行，留下一条证据链。</h2><p>记录原始输入、草稿、澄清、校验和授权。哈希链与内存检查点用于发现篡改。</p></div><div class="audit-toolbar"><span id="integrity" class="pill">校验中</span><button id="export-audit" class="button subtle">导出 JSON</button></div><div id="audit-list"></div><p class="input-note">日志保存在当前服务进程的内存中；重置或重启后清空。本原型不提供生产级外部可信存证。</p></section>
+    <footer>DCTA / A human-authorized banking prototype <span>DESIGNED FOR THE DBS CHALLENGE</span></footer>
+  </main>
+  <dialog id="confirm-dialog"><div class="dialog-icon">◇</div><span class="eyebrow">HUMAN AUTHORIZATION</span><h2>请核对每一笔交易</h2><p>以下详情由程序生成。确认后，模拟认证器将对这些具体交易签名。</p><div id="confirm-items"></div><div class="auth-notice">模拟身份认证 · 不采集人脸或指纹 · 签名两分钟内有效</div><label class="check-label"><input id="confirm-check" type="checkbox"> 我已核对收款人、金额及来源账户</label><div class="dialog-actions"><button id="cancel-confirm" class="button subtle">返回检查</button><button id="approve" class="button main-button" disabled>模拟认证并执行</button></div></dialog>
+  <div id="toast" role="status" class="toast" hidden></div>
+</body></html>
