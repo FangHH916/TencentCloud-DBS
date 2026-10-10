@@ -128,3 +128,22 @@ test('invalid clarification shapes and empty updates never mutate a draft', () =
   for (const fields of [[null], [[]], [{}], [{ badField: 'bad' }]]) assert.throws(() => clarify(s, d.id, fields));
   assert.equal(s.drafts.get(d.id).revision, 1); assert.equal(s.drafts.get(d.id).items[0].recipient, null);
 });
+
+test('family transfer asks one question at a time and never pays before authorization', () => {
+  const s = createSession();
+  let r = interpret(s, '给小明转三百块');
+  assert.equal(r.draft.items[0].recipient, 'grandson');
+  assert.equal(r.draft.items[0].amountCents, 30000);
+  assert.deepEqual(r.draft.missing.map(m => m.field), ['currency', 'source']);
+  assert.match(r.messages.at(-1).text, /新加坡元/);
+  r = clarify(s, r.draft.id, [{ currency: 'SGD' }]);
+  assert.equal(r.draft.status, 'clarification');
+  assert.deepEqual(r.draft.missing.map(m => m.field), ['source']);
+  assert.equal(s.balances.savings, 1250000);
+  r = clarify(s, r.draft.id, [{ source: 'savings' }]);
+  assert.equal(r.draft.status, 'ready');
+  assert.equal(s.transactions.length, 0);
+  const envelope = authorize(s, r.draft.id, r.draft.digest, 'CONFIRM');
+  execute(s, envelope);
+  assert.equal(s.balances.savings, 1220000);
+});

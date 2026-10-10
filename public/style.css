@@ -6,3 +6,67 @@
 @media(max-width:1150px){.sidebar{width:210px;padding:26px 16px}.brand{font-size:23px}main{margin-left:210px;padding:28px 25px}.transfer-grid{grid-template-columns:minmax(0,1.2fr) minmax(280px,1fr);gap:16px}.panel-header{padding:20px 18px}.panel-header .pill{font-size:9px}.composer-footer>span{display:none}.examples,.messages{padding-left:18px;padding-right:18px}.account strong{font-size:25px}.lab-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.sidebar{width:78px;align-items:center;padding:24px 10px}.brand>span:last-child,.nav-label,.sidebar-note,.identity,.nav b{display:none}.brand-mark{width:42px}.sidebar nav{margin-top:36px;width:100%}.nav{font-size:0;justify-content:center;padding:12px}.nav>span{font-size:23px}.nav.active{border:1px solid #efd5dc}main{margin-left:78px;padding:25px 22px}.transfer-grid{grid-template-columns:minmax(0,1fr)}.review-column{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:15px}.trust-card{margin-top:0;align-self:start}.draft-empty{min-height:210px}.accounts{gap:12px}.account{padding:17px}.account strong{font-size:24px}.account>div>span{display:none}}
 @media(max-width:600px){.sidebar{position:relative;width:100%;height:auto;flex-direction:row;justify-content:space-between;padding:12px 18px;border-right:0;border-bottom:1px solid var(--line)}.brand>span:last-child{display:block;font-size:20px}.brand small{font-size:6px}.brand-mark{width:33px;height:33px;font-size:25px;border-radius:9px}.sidebar nav{display:flex;width:auto;margin:0;gap:5px}.nav{margin:0;width:38px;padding:5px}.nav>span{font-size:23px}main{margin-left:0;padding:23px 16px}.topbar{align-items:start;gap:12px}h1{font-size:24px}.breadcrumb{font-size:8px}.top-actions{gap:7px;flex-direction:column;align-items:end}.mode{font-size:9px;padding:6px 9px}.top-actions .button{font-size:10px;padding:8px 10px}.demo-notice{font-size:10px;margin-top:16px}.accounts{grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.metric{display:none}.account strong{font-size:24px;margin:13px 0 8px}.account small{font-size:7px}.account>div:first-child{font-size:11px}.review-column{display:block}.trust-card{margin-top:15px}.panel-header{padding:18px}.messages{height:290px}.composer-footer{gap:5px}.composer-footer .main-button{margin-left:auto}.input-note{margin-left:18px;font-size:9px}.lab-grid{grid-template-columns:1fr}.lab-card p{min-height:0}.section-intro h2{font-size:21px}.audit-entry summary{flex-wrap:wrap}.audit-entry time{font-size:9px}footer{font-size:8px}footer span{display:none}.result-stats{gap:17px}}
+
+/* Large, readable transfer practice with explicit controls. */
+.senior-ui{--muted:#535b64;font-size:18px;line-height:1.6}
+.senior-ui button{min-height:48px;white-space:normal}.senior-ui .button,.senior-ui .nav{font-size:17px}
+.senior-ui .brand small{font-size:12px;letter-spacing:0}.senior-ui .sidebar-note p{font-size:16px}
+.senior-ui .breadcrumb,.senior-ui .eyebrow,.senior-ui .nav-label{font-size:14px;letter-spacing:0}
+.senior-ui h1{font-size:32px}.senior-ui .mode,.senior-ui .demo-notice{font-size:15px}
+.access-tools{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:22px 0}
+.access-tools label{display:flex;align-items:center;gap:10px;min-height:48px}.access-tools input,.senior-ui .check-label input{width:24px;height:24px;accent-color:var(--red);flex-shrink:0}
+.speech-status{flex-basis:100%;font-size:16px;color:var(--muted)}
+.practice-guide{display:flex;align-items:center;justify-content:space-between;gap:20px;background:#edf5f1;border:1px solid #b4d4c5;border-radius:16px;padding:20px}
+.practice-guide strong{font-size:21px}.practice-guide p{margin-top:8px;font-size:17px}
+.senior-ui .account>div:first-child,.senior-ui .account em{font-size:17px}
+.senior-ui .account small,.senior-ui .account>div>span{font-size:14px;letter-spacing:0}
+.senior-ui .account strong{font-size:32px}.senior-ui .panel-header h2{font-size:23px}
+.senior-ui .pill{font-size:14px;white-space:normal}.senior-ui .panel-header{align-items:flex-start}
+.senior-ui .messages{height:340px}.senior-ui .bubble{font-size:19px;max-width:95%;line-height:1.8}
+.senior-ui .bubble h3{font-size:21px}.senior-ui .bubble p{font-size:19px}
+.senior-ui .examples{display:flex;gap:10px;flex-wrap:wrap}.senior-ui .examples>span{font-size:16px}
+.senior-ui .examples button{font-size:16px;min-height:48px}
+.prompt-label{display:block;font-size:17px;margin-bottom:10px;font-weight:600}
+.senior-ui textarea{font-size:20px;line-height:1.7;min-height:100px}
+.senior-ui .composer-footer{flex-wrap:wrap;gap:12px}.senior-ui .composer-footer>span{display:none}
+.senior-ui .voice-button{font-size:20px;padding:14px 20px;border:2px solid #9b263d;border-radius:10px;color:#812039;background:#faf0f2;min-height:56px}
+.senior-ui .voice-button.listening{background:#9b263d;color:white}
+.senior-ui .composer-footer .main-button{margin-left:auto;min-height:56px;font-size:19px}
+.senior-ui .input-note{font-size:16px;color:#535b64;line-height:1.8}
+.senior-ui .draft-empty h3{font-size:22px}.senior-ui .draft-empty p{font-size:18px}
+.senior-ui .progress-steps{font-size:14px;gap:12px}.senior-ui .item-heading{gap:12px;flex-wrap:wrap}
+.senior-ui .item-heading strong{font-size:20px}.senior-ui .item-number{font-size:15px}
+.senior-ui .item-amount{font-size:29px}.senior-ui .item-detail{font-size:17px;gap:10px;flex-wrap:wrap}
+.senior-ui .batch-total{font-size:17px;flex-wrap:wrap}.senior-ui .batch-total strong{font-size:23px}
+.guided-question{margin:22px 0;padding:18px;border:2px solid #b4d4c5;border-radius:12px;min-width:0}
+.guided-question legend{font-size:22px;font-weight:700;padding:0 8px}.guided-question>p{font-size:16px;margin-bottom:14px}
+.guided-question .choice-button{display:block;width:100%;text-align:left;background:#edf5f1;border:1px solid #8eb4a3;margin:12px 0;padding:14px;color:#163e2d}
+.guided-question .field{font-size:17px}.guided-question input{width:100%;font-size:22px;min-height:56px}
+.senior-ui .draft-cta{font-size:18px;margin-top:12px}.senior-ui .validation-note{font-size:16px;line-height:1.8}
+.senior-ui .draft-tools{flex-wrap:wrap}.senior-ui .draft-tools .button{font-size:17px}
+.technical-details{margin-top:20px;font-size:15px;color:#535b64;overflow-wrap:anywhere}.technical-details summary{cursor:pointer;min-height:44px;padding-top:10px}
+.senior-ui .trust-title h3{font-size:20px}.senior-ui .trust-card p{font-size:17px}.senior-ui .trust-flow{font-size:15px}
+.senior-ui .empty-row,.senior-ui .transaction-row strong,.senior-ui .transaction-row .amount{font-size:18px}
+.senior-ui .transaction-row small{font-size:15px}
+.senior-ui dialog{width:min(620px,calc(100% - 32px))}.senior-ui dialog>p,.senior-ui .auth-notice,.senior-ui .check-label{font-size:17px}
+.senior-ui dialog h2{font-size:27px}.senior-ui dialog li{margin:12px 0}
+.senior-ui .dialog-actions{flex-wrap:wrap}.senior-ui .dialog-actions .button{flex:1}
+.senior-ui .toast{font-size:18px}.senior-ui .section-intro p,.senior-ui .lab-card p{font-size:17px}
+.senior-ui .lab-card h3{font-size:21px}.senior-ui .lab-card p{min-height:0}.senior-ui .lab-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.senior-ui.extra-large .bubble,.senior-ui.extra-large .bubble p,.senior-ui.extra-large textarea,.senior-ui.extra-large .button,.senior-ui.extra-large .item-detail,.senior-ui.extra-large .check-label{font-size:23px}
+.senior-ui.extra-large .item-amount{font-size:34px}.senior-ui.extra-large .guided-question legend{font-size:26px}
+@media(max-width:1200px){.senior-ui .transfer-grid{grid-template-columns:minmax(0,1fr)}.senior-ui .review-column{display:block}.senior-ui .trust-card{margin-top:20px}}
+@media(max-width:600px){.senior-ui main{padding:20px 16px}.senior-ui .topbar{flex-wrap:wrap}.senior-ui h1{font-size:28px}.senior-ui .top-actions{flex-direction:row;align-items:center;flex-wrap:wrap}.senior-ui .nav{font-size:0}.senior-ui .brand small{font-size:10px}.practice-guide{display:block}.practice-guide .button{width:100%;margin-top:15px}.senior-ui .account{padding:15px}.senior-ui .account strong{font-size:25px}.senior-ui .account small{font-size:13px}.senior-ui .panel-header{flex-wrap:wrap}.senior-ui .messages{height:320px;padding:18px}.senior-ui .composer-footer .main-button{margin:0;width:100%}.senior-ui .voice-button{width:100%}.senior-ui .lab-grid{grid-template-columns:1fr}.senior-ui .item-heading strong{font-size:19px}.senior-ui .transaction-row{flex-wrap:wrap}.senior-ui dialog{padding:22px}.senior-ui .dialog-actions .button{flex-basis:100%}}
+
+.senior-ui .voice-button span{font-size:20px}.senior-ui.extra-large .voice-button span{font-size:23px}
+
+.recovery-banner{background:#fff4e5;border:2px solid #ad7125;border-radius:14px;padding:20px;margin-top:20px}
+.recovery-banner[hidden]{display:none}.recovery-banner p{margin:10px 0}.recovery-banner>div{display:flex;flex-wrap:wrap;gap:12px}
+.senior-ui .access-tools select,.senior-ui #edit-dialog input,.senior-ui #edit-dialog select{font-size:20px;min-height:52px;max-width:100%;padding:10px;border:1px solid #727b84;border-radius:8px;background:white;color:#24272b}
+.senior-ui #edit-dialog .field{display:block;font-size:18px;margin:18px 0}.senior-ui #edit-dialog .field>input,.senior-ui #edit-dialog .field>select{display:block;width:100%;margin-top:8px}
+.senior-ui .edit-item{width:100%;margin-top:16px}
+.payment-receipt{background:#edf5f1;border:1px solid #b4d4c5;border-radius:12px;padding:18px;margin:18px 0;overflow-wrap:anywhere}
+.payment-receipt strong{font-size:23px;color:#185940}.payment-receipt p{font-size:18px;margin:10px 0}.payment-receipt small{font-size:15px}
+@media(max-width:1200px){.senior-ui .guided-question{scroll-margin-top:20px}.senior-ui .accounts{margin-bottom:16px}}
+@media(max-width:600px){.senior-ui .messages{height:220px}.senior-ui .accounts{grid-template-columns:1fr 1fr}.senior-ui .account{padding:12px}.senior-ui .account strong{margin:8px 0;font-size:24px}.senior-ui .account small{font-size:12px}.senior-ui .brand{gap:6px}.senior-ui .sidebar{padding:12px}.senior-ui .nav{width:44px;min-height:48px}.senior-ui .access-tools{gap:8px}.senior-ui .access-tools .button{padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
